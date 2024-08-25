@@ -46,7 +46,7 @@ def play_again():
         elif response=="NO":
             return False
         else:
-            print("Enter correct answer!")
+            print("Enter correct answer! (yes or no): ")
 
 questions = {
     "What is the name of the main villan in Star Wars?": "A",
