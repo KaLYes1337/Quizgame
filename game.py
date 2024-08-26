@@ -1,4 +1,20 @@
+from data import movies,options_movies
+from data import games,options_games
+def select_question():
+    print("Choose type of questions!")
+    print("1. Movies")
+    print("2. Games")
+
+    while True:
+        choice = input("Enter a number to choose the questions: ")
+        if choice=="1":
+            return movies,options_movies
+        elif choice=="2":
+            return games,options_games
+        else:
+            print("Invalid choice! Choose a valid number!")
 def new_game():
+    questions,options=select_question()
     guesses = []
     correct_guesses = 0
     question_num = 1
@@ -13,7 +29,7 @@ def new_game():
         guesses.append(guess)
         correct_guesses += check_answer(questions.get(key), guess)
         question_num += 1
-    display_score(correct_guesses,guesses)
+    display_score(correct_guesses,guesses,questions)
 def check_answer(answer, guess):
     if answer == guess:
         print("Correct answer!")
@@ -23,7 +39,7 @@ def check_answer(answer, guess):
         return 0
 
 
-def display_score(correct_guesses,guesses):
+def display_score(correct_guesses,guesses,questions):
     print("(------------------)")
     print("Results!")
     print("Answers: ",end="")
@@ -48,18 +64,7 @@ def play_again():
         else:
             print("Enter correct answer! (yes or no): ")
 
-questions = {
-    "What is the name of the main villan in Star Wars?": "A",
-    "What is the name of the second planet in the Solar system?": "B",
-    "Who is the writer of the LOTR?": "D",
-    "Is Earth round?": "B",
-}
-options = [
-    ["A. Darth Vader", "B. Han Solo", "C. Luke Skywalker", "D. Obi Wan Kenobi"],
-    ["A. Earth", "B. Venus", "C. Jupiter", "D. Pluto"],
-    ["A. J.K.Rowling", "B. Ivan Vazov", "C. Hristo Stoichkov", "D. Tolkin"],
-    ["A. No", "B. Yes", "C. Sometimes", "D. What is Earth?"],
-]
+
 new_game()
 while play_again():
     new_game()
