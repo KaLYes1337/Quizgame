@@ -5,3 +5,4 @@ In the future I will expand on it to have few options: </br>
   - To have the option for the user to add his own questions and answers.</br>
   - To have different topics with mulitple questions.</br>
   - Questions to be randomazed and to not be displayed in the same sequence.</br>
+  - Added option so that you can add your own questions.</br>

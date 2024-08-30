@@ -10,6 +10,11 @@ options_movies = [
     ["A. J.K.Rowling", "B. Ivan Vazov", "C. Hristo Stoichkov", "D. Tolkin"],
     ["A. No", "B. Yes", "C. Sometimes", "D. What is Earth?"],
 ]
+user_questions={
 
+}
+user_options=[
+
+]
 games={}
 options_games=[]
